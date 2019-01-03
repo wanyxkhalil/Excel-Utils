@@ -1,0 +1,25 @@
+plugins {
+    id 'groovy'
+    id 'maven-publish'
+}
+
+group = 'io.wanyxkhalil'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:2.5.4'
+
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation 'org.apache.commons:commons-collections4:4.2'
+    
+    implementation 'org.apache.poi:poi:3.17'
+    implementation 'org.apache.poi:poi-ooxml:3.17'
+
+
+    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.5'
+}
