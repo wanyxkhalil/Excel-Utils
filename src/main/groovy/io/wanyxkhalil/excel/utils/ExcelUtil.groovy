@@ -1,8 +1,8 @@
 package io.wanyxkhalil.excel.utils
 
-import io.wanyxkhalil.excel.utils.domain.FieldInfo
+import io.wanyxkhalil.excel.utils.normal.FieldInfo
 import io.wanyxkhalil.excel.utils.domain.SheetObject
-import io.wanyxkhalil.excel.utils.util.ExcelBuilder
+import io.wanyxkhalil.excel.utils.normal.ExcelBuilder
 import org.apache.poi.ss.usermodel.Sheet
 import org.apache.poi.ss.usermodel.Workbook
 import org.apache.poi.xssf.streaming.SXSSFWorkbook

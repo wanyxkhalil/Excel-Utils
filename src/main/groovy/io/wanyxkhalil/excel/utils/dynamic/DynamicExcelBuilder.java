@@ -1,6 +1,6 @@
 package io.wanyxkhalil.excel.utils.dynamic;
 
-import io.wanyxkhalil.excel.utils.util.ExcelBuilder;
+import io.wanyxkhalil.excel.utils.normal.ExcelBuilder;
 import io.wanyxkhalil.excel.utils.util.ExcelFileUtils;
 
 import java.nio.file.Path;

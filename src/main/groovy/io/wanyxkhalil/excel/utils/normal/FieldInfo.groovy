@@ -1,4 +1,4 @@
-package io.wanyxkhalil.excel.utils.domain
+package io.wanyxkhalil.excel.utils.normal
 
 class FieldInfo {
     String annotationName
