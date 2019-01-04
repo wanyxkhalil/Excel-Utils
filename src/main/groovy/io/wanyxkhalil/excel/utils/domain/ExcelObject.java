@@ -1,6 +1,6 @@
 package io.wanyxkhalil.excel.utils.domain;
 
-import io.wanyxkhalil.excel.utils.normal.ExcelUtil;
+import io.wanyxkhalil.excel.utils.ExcelUtil;
 
 import java.nio.file.Path;
 import java.util.List;

@@ -1,7 +1,6 @@
 package io.wanyxkhalil.excel.utils.util;
 
-import io.wanyxkhalil.excel.utils.config.BakerException;
-import io.wanyxkhalil.excel.utils.config.Constants;
+import io.wanyxkhalil.excel.utils.exception.EuException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
@@ -17,11 +16,16 @@ public class ExcelFileUtils {
 
     private static final String SUFFIX_XLSX = ".xlsx";
 
+    /**
+     * 目录错误
+     */
+    private static final String FILE_IS_NOT_DIRECTORY = "目录错误";
+
     public static Path getXlsxPath(String name) {
         Path dirPath = Paths.get(ExcelFileUtils.DEFAULT_FILE_DIR);
 
         if (!Files.isDirectory(dirPath)) {
-            throw new BakerException(Constants.FILE_IS_NOT_DIRECTORY);
+            throw EuException.build(FILE_IS_NOT_DIRECTORY);
         }
 
         StringBuilder sb = new StringBuilder();

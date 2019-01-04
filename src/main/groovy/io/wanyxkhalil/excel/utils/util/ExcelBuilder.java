@@ -1,6 +1,5 @@
 package io.wanyxkhalil.excel.utils.util;
 
-import io.wanyxkhalil.excel.utils.config.Constants;
 import io.wanyxkhalil.excel.utils.domain.ExcelObject;
 import io.wanyxkhalil.excel.utils.domain.SheetObject;
 
@@ -10,6 +9,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class ExcelBuilder {
+
+    /**
+     * 空字符串
+     */
+    private static final String BLANK_STRING = "";
+
 
     private static final String DEFAULT_SHEET_NAME = "sheet";
 
@@ -24,7 +29,7 @@ public class ExcelBuilder {
     protected List<SheetObject> sheets;
 
     public ExcelBuilder fileName() {
-        return fileName(Constants.BLANK_STRING);
+        return fileName(BLANK_STRING);
     }
 
     public ExcelBuilder fileName(String fileName) {

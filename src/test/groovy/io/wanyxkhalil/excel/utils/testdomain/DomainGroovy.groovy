@@ -1,6 +1,6 @@
 package io.wanyxkhalil.excel.utils.testdomain
 
-import io.wanyxkhalil.excel.utils.config.ExcelField
+import io.wanyxkhalil.excel.utils.annotation.ExcelField
 
 class DomainGroovy {
 

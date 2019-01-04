@@ -1,8 +1,9 @@
-package io.wanyxkhalil.excel.utils.dynamic
+package io.wanyxkhalil.excel.utils
 
-import io.wanyxkhalil.excel.utils.config.BakerException
 import io.wanyxkhalil.excel.utils.domain.SheetObject
-import io.wanyxkhalil.excel.utils.normal.ExcelUtil
+import io.wanyxkhalil.excel.utils.dynamic.DynamicExcelBuilder
+import io.wanyxkhalil.excel.utils.dynamic.GroovyDynamicData
+import io.wanyxkhalil.excel.utils.exception.EuException
 import org.apache.commons.collections4.CollectionUtils
 import org.apache.poi.xssf.streaming.SXSSFWorkbook
 
@@ -22,15 +23,15 @@ class DynamicExcelUtil extends ExcelUtil {
         }
 
         if (!Files.isWritable(path)) {
-            throw new BakerException("该地址不可访问")
+            throw EuException.build("该地址不可访问")
         }
 
         if (CollectionUtils.sizeIsEmpty(sheets)) {
-            throw new BakerException("生成动态Excel时不可为空")
+            throw EuException.build(("生成动态Excel时不可为空"))
         }
 
         if (!Objects.equals(sheets.get(0).clz, GroovyDynamicData.class)) {
-            throw new BakerException("使用动态数据生成Excel时不可为空")
+            throw EuException.build(("使用动态数据生成Excel时不可为空"))
         }
 
         // Excel生成

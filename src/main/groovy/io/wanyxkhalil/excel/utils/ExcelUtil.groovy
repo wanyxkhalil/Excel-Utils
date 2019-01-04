@@ -1,4 +1,4 @@
-package io.wanyxkhalil.excel.utils.normal
+package io.wanyxkhalil.excel.utils
 
 import io.wanyxkhalil.excel.utils.domain.FieldInfo
 import io.wanyxkhalil.excel.utils.domain.SheetObject
