@@ -46,7 +46,7 @@ class DynamicExcelUtil extends ExcelUtil {
         path
     }
 
-    @SuppressWarnings("deprecation")
+    @SuppressWarnings("unchecked")
     private static void sheetWrite(SXSSFWorkbook book, SheetObject sheetObj) {
         def sheet = book.createSheet(sheetObj.sheetName)
         def headRow = sheet.createRow(0)

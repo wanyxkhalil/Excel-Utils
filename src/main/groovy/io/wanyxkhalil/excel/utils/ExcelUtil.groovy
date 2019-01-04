@@ -1,5 +1,6 @@
 package io.wanyxkhalil.excel.utils
 
+import io.wanyxkhalil.excel.utils.annotation.ExcelField
 import io.wanyxkhalil.excel.utils.normal.FieldInfo
 import io.wanyxkhalil.excel.utils.domain.SheetObject
 import io.wanyxkhalil.excel.utils.normal.ExcelBuilder
