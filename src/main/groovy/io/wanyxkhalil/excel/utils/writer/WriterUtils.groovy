@@ -1,6 +1,7 @@
 package io.wanyxkhalil.excel.utils.writer
 
-
+import io.wanyxkhalil.excel.utils.domain.ExcelField
+import io.wanyxkhalil.excel.utils.domain.FieldInfo
 import io.wanyxkhalil.excel.utils.domain.SheetInfo
 import org.apache.commons.collections4.CollectionUtils
 import org.apache.poi.ss.usermodel.Sheet
@@ -72,7 +73,7 @@ class WriterUtils {
             def row = sheet.createRow(i + 1)
 
             // 每一行设置各单元格
-            fieldInfo.eachWithIndex { io.wanyxkhalil.excel.utils.domain.FieldInfo field, int j ->
+            fieldInfo.eachWithIndex { FieldInfo field, int j ->
                 def cell = row.createCell(j)
 
                 def v = obj.invokeMethod(field.getFieldGetter(), null)
@@ -93,8 +94,8 @@ class WriterUtils {
      * @param clz 类
      * @return 字段信息列表
      */
-    private static List<io.wanyxkhalil.excel.utils.domain.FieldInfo> listFieldInfo(Class clz) {
-        def list = new ArrayList<io.wanyxkhalil.excel.utils.domain.FieldInfo>()
+    private static List<FieldInfo> listFieldInfo(Class clz) {
+        def list = new ArrayList<FieldInfo>()
 
         // 遍历类继承关系
         for (; clz != Object.class; clz = clz.getSuperclass()) {
@@ -102,14 +103,14 @@ class WriterUtils {
 
             // 筛选excel字段
             def annotationFields = fields.findAll {
-                it.getAnnotation(io.wanyxkhalil.excel.utils.domain.ExcelField.class) != null
+                it.getAnnotation(ExcelField.class) != null
             }
 
             // 获取字段注解和字段get方法
             def fieldInfo = annotationFields.collect {
-                def field = new io.wanyxkhalil.excel.utils.domain.FieldInfo()
+                def field = new FieldInfo()
 
-                def annotation = it.getAnnotation(io.wanyxkhalil.excel.utils.domain.ExcelField.class)
+                def annotation = it.getAnnotation(ExcelField.class)
                 field.annotationValue = annotation.value()
                 field.fieldGetter = retrieveFieldGetter(it.name)
 
