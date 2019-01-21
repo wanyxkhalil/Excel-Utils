@@ -1,6 +1,6 @@
-package io.wanyxkhalil.excel.utils.dynamic
+package io.wanyxkhalil.excel.utils.dynamicwriter
 
-class GroovyDynamicData {
+class DynamicData {
     def map = new LinkedHashMap<String, Object>()
 
     Object get(String key) { map[key] }

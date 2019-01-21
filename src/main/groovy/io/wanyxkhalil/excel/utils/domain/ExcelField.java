@@ -1,4 +1,4 @@
-package io.wanyxkhalil.excel.utils.annotation;
+package io.wanyxkhalil.excel.utils.domain;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

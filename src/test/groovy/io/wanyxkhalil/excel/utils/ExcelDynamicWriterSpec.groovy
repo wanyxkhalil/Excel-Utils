@@ -1,17 +1,17 @@
 package io.wanyxkhalil.excel.utils
 
-import io.wanyxkhalil.excel.utils.dynamic.GroovyDynamicData
+import io.wanyxkhalil.excel.utils.dynamicwriter.DynamicData
 import spock.lang.Specification
 
-class DynamicExcelBuilderSpec extends Specification {
+class ExcelDynamicWriterSpec extends Specification {
 
     def "生成动态数据的Excel"() {
         setup:
-        def list = new ArrayList<GroovyDynamicData>(10000)
+        def list = new ArrayList<DynamicData>(10000)
 
         1.upto(10000) {
 
-            def v = new GroovyDynamicData()
+            def v = new DynamicData()
 
             v.propertySet("字符串", "第 $it 列")
             v.propertySet("Integer", it.intValue())
@@ -22,12 +22,11 @@ class DynamicExcelBuilderSpec extends Specification {
         }
 
         when:
-        def path = DynamicExcelUtil.builder()
+        def path = ExcelDynamicWriter.builder()
                 .fileName("fd")
                 .sheet("1", list)
-                .sheet("2", list[0,500])
+                .sheet("2", list[0, 500])
                 .build()
-                .write2File()
 
         then:
         println path

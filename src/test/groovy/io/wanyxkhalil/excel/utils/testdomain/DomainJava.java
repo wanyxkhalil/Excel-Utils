@@ -1,6 +1,6 @@
 package io.wanyxkhalil.excel.utils.testdomain;
 
-import io.wanyxkhalil.excel.utils.annotation.ExcelField;
+import io.wanyxkhalil.excel.utils.domain.ExcelField;
 
 import java.math.BigDecimal;
 

@@ -2,30 +2,28 @@
 
 ## 使用
 
-- 使用JavaBean时
+- 使用JavaBean
 
 ```groovy
-def list = new ArrayList<DomainJava>()
+//def list = new ArrayList<{JavaBean with filed annotation}>()
 // ...... 添加数据
 
-def path = ExcelUtil.builder()
+def path = ExcelWriter.builder()
                 .fileName()
                 .sheet(list)
                 .build()
-                .write2File()
 ```
 
-- 使用动态数据时
+- 使用动态数据，主要用于一维表难以表述的情况
 
 ```groovy
-def list = new ArrayList<DomainJava>()
+def list = new ArrayList<DynamicData>()
 // ...... 添加数据
 
-def path = DynamicExcelUtil.builder()
+def path = ExcelDynamicWriter.builder()
                 .fileName()
                 .sheet(list)
                 .build()
-                .write2File()
 ```
 
 ## 主要方法列表

@@ -4,7 +4,7 @@ import io.wanyxkhalil.excel.utils.testdomain.DomainGroovy
 import io.wanyxkhalil.excel.utils.testdomain.DomainJava
 import spock.lang.Specification
 
-class ExcelBuilderSpec extends Specification {
+class ExcelWriterSpec extends Specification {
 
     def "生成Excel--java"() {
         setup:
@@ -21,15 +21,15 @@ class ExcelBuilderSpec extends Specification {
         }
 
         when:
-        def path = ExcelUtil.builder()
+        def path = ExcelWriter.builder()
                 .fileName()
                 .sheet(list)
                 .build()
-                .write2File()
 
         then:
         println path
     }
+
 
     def "生成Excel--groovy"() {
         setup:
@@ -46,11 +46,10 @@ class ExcelBuilderSpec extends Specification {
         }
 
         when:
-        def path = ExcelUtil.builder()
+        def path = ExcelWriter.builder()
                 .fileName()
                 .sheet(list)
                 .build()
-                .write2File()
 
         then:
         println path

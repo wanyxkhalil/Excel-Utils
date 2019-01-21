@@ -4,8 +4,8 @@ package io.wanyxkhalil.excel.utils.util;
  * SnowflakeID生成器
  * 支持2^2=4个节点，每毫秒内同一个节点可以生成1<<20=1048576个Id
  */
-class ExcelIDUtil {
-    private static final ExcelIDUtil INSTANCE = new ExcelIDUtil();
+class SnowflakeIDUtil {
+    private static final SnowflakeIDUtil INSTANCE = new SnowflakeIDUtil();
 
     /**
      * 基准时间Thu Sep 01 00:00:00 CST 2016
@@ -47,12 +47,12 @@ class ExcelIDUtil {
     private long sequence = 0L;
     private long lastStamp = -1L;
 
-    private ExcelIDUtil() {
+    private SnowflakeIDUtil() {
         this.dataCenterId = 1L;
         this.machineId = 1L;
     }
 
-    static ExcelIDUtil getInstance() {
+    static SnowflakeIDUtil getInstance() {
         return INSTANCE;
     }
 
